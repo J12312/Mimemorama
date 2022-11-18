@@ -1,0 +1,32 @@
+img.card-img-top {
+    object-fit: cover;
+    cursor: pointer;
+    //*Tamaño imagenes *//
+    max-height: 100px !important;
+    max-width: 100px !important;
+}
+
+img.card-img-top.girar {
+    animation: fadein 2s;
+}
+.container {
+    display: grid;
+    grid-template-columns: auto;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: #07CFEB;
+    border: 5px solid #12A8BD;
+    border-radius: 10px;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+
+    }
+}
+

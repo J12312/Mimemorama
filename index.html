@@ -1,0 +1,44 @@
+<html lang="es">
+    <head>
+
+        <title>Memorama</title>
+        <link href="./css/bootstrap.css" rel="stylesheet">
+        <link href="./css/style.css" rel="stylesheet">
+    </head>
+    <body>
+
+<body background="img/Fondo.jpg">
+        <main role="main" class="container-fluid" id="app">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center" >Mi Memorama</h1>
+                    <p>
+                        <br><a @click="mostrarCreditos" href="#" class="btn btn-primary">Ayuda</a><tr><td>
+                        <DIV ALIGN=left> <span class="h4">Intentos: </span><h5>
+                        {{intentos}}/{{MAXIMOS_INTENTOS}}&nbsp;<span class="h4"><br>Aciertos:
+                        </span> {{aciertos}}</DIV> 
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+            <div v-for="(fila, indiceFila) in memorama" :key="indiceFila"
+                class="row">
+                <div :key="indiceFila+''+indiceImagen" class="col-3"
+                    v-for="(imagen, indiceImagen) in fila">
+                    <div class="mb-3">
+                        <img @click="voltear(indiceFila, indiceImagen)"
+                            :class="{'girar': imagen.mostrar}"
+                            :src="(imagen.mostrar ? imagen.ruta :
+                            NOMBRE_IMAGEN_OCULTA)" class="card-img-top img-fluid
+                            img-thumbnail">
+                    </div>
+                </div>
+            </div>
+        </main>
+        </div>
+        <script src="./js/sweetalert2.js"></script>
+        <script src="./js/vue.js"></script>
+        <script src="./js/script.js"></script>
+    </body>
+
+</html>
